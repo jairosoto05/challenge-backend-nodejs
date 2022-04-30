@@ -1,16 +1,17 @@
 const Router = require('express');
 const router = Router();
 
+const { uploadImage } = require('../middleware/uploadFile');
 const { createMovie, getMovie, updateMovie, deleteMovie, searchMovie } = require('../controllers/movie.controller');
 
 router.route('/movies')
     .get(searchMovie)
-    .post(createMovie)
+    .post(uploadImage, createMovie)
 
 router.route('/movies/:id')
     .get(getMovie)
     .delete(deleteMovie)
-    .put(updateMovie)
+    .put(uploadImage, updateMovie)
 
 
 module.exports = router;
