@@ -4,10 +4,10 @@ const { DB_HOST, DB_USER, DB_PASS, DB_NAME } = process.env;
 
 module.exports={
   "development": {
-    "username": DB_USER || 'postgres', 
-    "password": DB_PASS || 'postgres',
-    "database": process.env.DB_NAME || 'disney',
-    "host": process.env.DB_HOST || 'localhost',
+    "username": DB_USER || "postgres", 
+    "password": DB_PASS || "postgres",
+    "database": DB_NAME || "disney",
+    "host": DB_HOST || "localhost",
     "dialect": "postgres"
   },
   "test": {
